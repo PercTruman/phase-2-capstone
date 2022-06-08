@@ -1,11 +1,16 @@
 import React from 'react'
+import { NavLink } from "react-router-dom"
 
 function NavBar() {
   return (
     <div>
         <header>
         <h1>Easy Money: Finally, A Fundraiser That Works As Hard As You Do</h1>
-        <nav></nav>
+        <nav>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/mycontacts">My Contacts</NavLink>
+          <NavLink to="/newdonorform">Add New Donor</NavLink>
+        </nav>
     </header>
     </div>
   )

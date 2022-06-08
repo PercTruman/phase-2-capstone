@@ -16,6 +16,13 @@ header, footer {
   padding: 2em;
   margin: 0 auto;
 }
+
+ a {
+   padding: 3em;
+  color: red;
+  text-align: center;
+
+}
 /* main {
   background-color: black;
   margin: 0 auto;
