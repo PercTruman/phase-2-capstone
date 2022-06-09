@@ -16,17 +16,13 @@ header, footer {
   padding: 2em;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
- 
 }
 
 .headerLink{ 
-  /* border: 1px solid yellow; */
-  width:100%;
-  /* margin: 1rem; */
+  margin: 1rem;
   padding: .5em;
   color: red;
-  /* text-align: center; */
+  text-align: center;
   text-decoration: none;
 } 
 

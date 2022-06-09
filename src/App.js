@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 import ContactList from "./components/ContactList";
 import NavBar from "./components/NavBar";
@@ -7,6 +7,10 @@ import Login from "./components/Login";
 import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
+
+  useEffect(()=>{
+    fetch('http://local')
+  }, [])
   return (
     <div>
       <NavBar />
