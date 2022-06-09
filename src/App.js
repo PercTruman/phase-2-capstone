@@ -7,10 +7,15 @@ import Login from "./components/Login";
 import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
+  const [contacts, setContacts] = useState([])
 
   useEffect(()=>{
-    fetch('http://local')
+    fetch('http://localhost:3000/contacts')
+    .then (res=>res.json())
+    .then((initialContacts)=>setContacts(initialContacts))
   }, [])
+
+  console.log(contacts)
   return (
     <div>
       <NavBar />
