@@ -7,15 +7,16 @@ import Login from "./components/Login";
 import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts]=useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('http://localhost:3000/contacts')
-    .then (res=>res.json())
-    .then((initialContacts)=>setContacts(initialContacts))
+      .then(res=>res.json())
+      .then(initialContacts=>setContacts(initialContacts))
   }, [])
+  
+console.log(contacts)
 
-  console.log(contacts)
   return (
     <div>
       <NavBar />
@@ -27,7 +28,7 @@ function App() {
           <NewDonorForm />
         </Route>
         <Route path="/mycontacts">
-          <ContactList />
+          <ContactList contacts={contacts}/>
         </Route>
       </Switch>
       <FiltersAndSearch />
