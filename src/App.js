@@ -7,28 +7,32 @@ import Login from "./components/Login";
 import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
-  const [contacts, setContacts]=useState([])
+  const [contacts, setContacts] = useState([])
+
 
   useEffect(() => {
     fetch('http://localhost:3000/contacts')
       .then(res=>res.json())
       .then(initialContacts=>setContacts(initialContacts))
-  }, [])
-  
-console.log(contacts)
+    }, [])
+ 
+
 
   return (
     <div>
       <NavBar />
       <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path="/newdonorform">
+        <Route exact path="/newdonorform">
           <NewDonorForm />
         </Route>
-        <Route path="/mycontacts">
-          <ContactList contacts={contacts}/>
+        <Route exact path="/mycontacts">
+          <ContactList contacts = {contacts}/>
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
         </Route>
       </Switch>
       <FiltersAndSearch />
