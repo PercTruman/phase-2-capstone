@@ -7,21 +7,31 @@ body {
   margin: 0 auto;
 }
 
+
 header, footer {
   background: rgb(2,0,36);
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   color: white;
   text-align: center;
-  height: 15%;
   padding: 2em;
-  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
 }
 
- a {
-   padding: 3em;
+.headerLink{ 
+  /* border: 1px solid yellow; */
+  width:100%;
+  /* margin: 1rem; */
+  padding: .5em;
   color: red;
-  text-align: center;
+  /* text-align: center; */
+  text-decoration: none;
+} 
 
+a.active {
+  color:yellow;
 }
 /* main {
   background-color: black;
@@ -39,8 +49,8 @@ header, footer {
  /* }  */
 
 h1 {
-  margin:0 auto;
-  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
   
 }
 form, #tools {
