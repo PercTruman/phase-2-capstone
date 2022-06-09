@@ -1,24 +1,18 @@
-import React from 'react'
-import ContactCard from './ContactCard'
+import React from "react";
+import GeneralInfoList from "./GeneralInfoList";
+
+
 
 function ContactList({contacts}) {
-  console.log(typeof contacts)
-  const individualCards = contacts.map((contact)=>
-    <ContactCard  
-      key={contact.id} 
-      name={contact.firstname + contact.lastname} 
-      email={contact.email} 
-      phone={contact.phonenumber} 
-      hasDonated={contact.hasDonated}
-      amountDonated={contact.amountDonated}
-      /> 
-    )
-      
+    const generalInfoCards = contacts.map(contact=>
+        <GeneralInfoList 
+        key={contact.id} 
+        name={contact.firstname + contact.lastname} 
+        hasDonated={contact.hasDonated}
+        contacts={contacts}
+        />)
   return (
-    <div>
-      <h2>Contacts:</h2>
-        {individualCards}
-    </div>
+    <div>{generalInfoCards}</div>
   )
 }
 
