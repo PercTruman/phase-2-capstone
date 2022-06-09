@@ -67,7 +67,7 @@ form input {
 
     margin: 2rem;
     width:50%;
-   align-items: center;
+    align-items: center;
     text-align: center;
 
   }
@@ -87,6 +87,12 @@ form input {
     justify-content: center;
     text-align: center;
   }
+
+  button {
+    margin: 1em auto;
+    width: 30%;
+  }
+ 
 
 
   
