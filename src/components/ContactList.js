@@ -8,7 +8,10 @@ function ContactList({contacts}) {
         <GeneralInfoList 
         key={contact.id} 
         name={contact.firstname + contact.lastname} 
+        email={contact.email}
+        phone={contact.phone}
         hasDonated={contact.hasDonated}
+        amountDonated={contact.amountDonated}
         contacts={contacts}
         />)
   return (
