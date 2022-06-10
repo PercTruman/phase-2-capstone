@@ -81,7 +81,7 @@ form input {
   .card {
     border: 1px solid black;
     margin: 2rem;
-    width:20%;
+    width:30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
