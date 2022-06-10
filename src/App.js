@@ -26,10 +26,10 @@ function App() {
         <Route exact path="/newdonorform">
           <NewDonorForm />
         </Route>
-        <Route exact path="/mycontacts">
+        <Route exact path = "/mycontacts">
           <ContactList contacts={contacts} />
         </Route>
-        <Route exact path="/mycontacts/:id">
+        <Route  path = "/mycontacts/:id">
           <ContactDetails />
         </Route>
         <Route path="*">
