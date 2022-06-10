@@ -29,6 +29,10 @@ header, footer {
 a.active {
   color:yellow;
 }
+
+h4 {
+  
+}
 /* main {
   background-color: black;
   margin: 0 auto;
@@ -72,7 +76,6 @@ form input {
 
   }
 .cardContainer {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,6 +89,13 @@ form input {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+  }
+  .smallcard {
+    border: 1px solid black;
+    text-align: center;
+    width:20%;
+    margin: 1em;
+    padding: 15px;
   }
 
   button {

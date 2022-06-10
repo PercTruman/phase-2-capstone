@@ -9,10 +9,12 @@ function GeneralInfoList({
 {
  
 return (
-    <div className="card">
-      <h4>{name}</h4>
-      <h4>Donor? {hasDonated ? "Yes" : "No"}</h4>
-      <NavLink to = {`/mycontacts/${id}`}>See Details</NavLink>
+    <div className="cardContainer">
+      <div className="smallcard">
+          <h4>{name}</h4>
+          <h4>Donor? {hasDonated ? "Yes" : "No"}</h4>
+          <NavLink to = {`/mycontacts/${id}`}>Contact Details</NavLink>
+      </div>
     </div>
   );
 }
