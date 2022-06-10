@@ -51,8 +51,16 @@ h4 {
 h1 {
   margin-bottom: 1rem;
   font-size: 2rem;
-  
-}
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h4 {
+    margin: 15px;
+  }
+
 form, #tools {
   display: flex;
   flex-direction: column;
@@ -81,10 +89,11 @@ form input {
   justify-content: center;
   align-items: center;
 }
-  .card {
+  .bigcard {
     border: 1px solid black;
     margin: 2rem;
     width:30%;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
