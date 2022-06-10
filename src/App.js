@@ -16,6 +16,11 @@ function App() {
       .then((initialContacts) => setContacts(initialContacts));
   }, []);
 
+  function handleAddNewDonor(e, donorObj){
+    e.preventDefault()
+    setContacts([...contacts, donorObj])
+  }
+
   return (
     <div>
       <NavBar />
@@ -24,7 +29,7 @@ function App() {
           <Login />
         </Route>
         <Route exact path="/newdonorform">
-          <NewDonorForm />
+          <NewDonorForm  handleAddNewDonor={handleAddNewDonor}/>
         </Route>
         <Route exact path = "/mycontacts">
           <ContactList contacts={contacts} />

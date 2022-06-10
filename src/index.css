@@ -1,37 +1,41 @@
-html{
+html {
   margin: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   letter-spacing: 1px;
 }
 body {
   margin: 0 auto;
 }
 
-
-header, footer {
-  background: rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
+header,
+footer {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 38, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
   color: white;
   text-align: center;
   padding: 2em;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
-.headerLink{ 
+.headerLink {
   margin: 1rem;
-  padding: .5em;
+  padding: 0.5em;
   color: red;
   text-align: center;
   text-decoration: none;
-} 
+}
 
 a.active {
-  color:yellow;
+  color: yellow;
 }
 
 h4 {
-  
 }
 /* main {
   background-color: black;
@@ -45,75 +49,69 @@ h4 {
   /* display:flex;
   flex-direction: column;
   justify-content: center; */
-  
- /* }  */
+
+/* }  */
 
 h1 {
   margin-bottom: 1rem;
   font-size: 2rem;
-  }
+}
 
-  h2 {
-    text-align: center;
-  }
+h2 {
+  text-align: center;
+}
 
-  h4 {
-    margin: 15px;
-  }
+h4 {
+  margin: 15px;
+}
 
-form, #tools {
+form,
+#tools {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin-top: 2rem auto;
   margin-bottom: 2rem;
-  color:rgb(155, 156, 208); 
+  color: rgb(155, 156, 208);
 }
 form input {
   text-align: center;
   margin-bottom: 1em;
-  }
+}
 
-  .cardsHeader {
 
-    margin: 2rem;
-    width:50%;
-    align-items: center;
-    text-align: center;
-
-  }
+.cardsHeader {
+  margin: 2rem;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+}
 .cardContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-  .bigcard {
-    border: 1px solid black;
-    margin: 2rem;
-    width:30%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .smallcard {
-    border: 1px solid black;
-    text-align: center;
-    width:20%;
-    margin: 1em;
-    padding: 15px;
-  }
+.bigcard {
+  border: 1px solid black;
+  margin: 2rem;
+  width: 30%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.smallcard {
+  border: 1px solid black;
+  text-align: center;
+  width: 20%;
+  margin: 1em;
+  padding: 15px;
+}
 
-  button {
-    margin: 1em auto;
-    width: 30%;
-  }
- 
-
-
-  
-
- 
+button {
+  margin: 1em auto;
+  width: 30%;
+}
