@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import ContactList from "./components/ContactList";
 import NavBar from "./components/NavBar";
 import NewDonorForm from "./components/NewDonorForm";
+import ContactDetails from "./components/ContactDetails";
 import Login from "./components/Login";
 import FiltersAndSearch from "./components/FiltersAndSearch";
 
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/mycontacts">
           <ContactList contacts={contacts} />
+        </Route>
+        <Route exact path="/mycontacts/:id">
+          <ContactDetails />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

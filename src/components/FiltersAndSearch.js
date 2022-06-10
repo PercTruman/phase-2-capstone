@@ -3,9 +3,7 @@ import React from 'react'
 
 function FiltersAndSearch() {
   return (
-    <div>FiltersAndSearch
-    
-    </div>
+    <div></div>
   )
 }
 

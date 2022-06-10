@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import  { useParams } from "react-router-dom"
 
-function ContactDetails({ name, email, phone, hasDonated, amountDonated }) {
+function ContactDetails() {
+  const [detailedCard, setDetailedCard] = useState(null)
+  const { id } = useParams()
+
+  useEffect(()=> {
+      fetch(`/mycontacts/${id}`)
+        .then(res=>res.json())
+        .then(card=>setDetailedCard(card.detailedCard))
+  }, [id])
+
+  const { name, email, phone, hasDonated, amountDonated } = detailedCard
+
   return (
     <div className="cardContainer">
       <div className="card">

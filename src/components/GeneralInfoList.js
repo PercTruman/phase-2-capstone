@@ -1,31 +1,32 @@
 import React from "react";
 import ContactDetails from "./ContactDetails";
+import { NavLink } from "react-router-dom";
 
 function GeneralInfoList({
+  id,
   name,
-  email,
-  phone,
   hasDonated,
-  amountDonated,
-  contacts,
-}) {
-  const detailCards = contacts.map((contact) => (
-    <ContactDetails
-      key={contact.id}
-      name={name}
-      phone={phone}
-      email={email}
-      hasDonated={hasDonated ? "Yes" : "No"}
-      amountDonated={amountDonated}
-      contacts={contacts}
-    />
-  ));
+  // contacts,
+}) 
+{
+  // const detailCards = contacts.map((contact) => (
+  //   <ContactDetails
+  //     // key={contact.id}
+  //     // id = {contact.id}
+  //     // name={contact.name}
+  //     // phone={contact.phone}
+  //     // email={contact.email}
+  //     // hasDonated={contact.hasDonated ? "Yes" : "No"}
+  //     // amountDonated={contact.amountDonated}
+  //     // contacts={contacts}
+  //    />
+  // ));
 
   return (
     <div className="card">
       <h4>{name}</h4>
       <h4>Donor? {hasDonated ? "Yes" : "No"}</h4>
-      <button>See Details</button>
+      <NavLink to = {`/mycontacts/${id}`}>See Details</NavLink>
     </div>
   );
 }

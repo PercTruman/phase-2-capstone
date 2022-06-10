@@ -5,6 +5,7 @@ function ContactList({ contacts }) {
   const generalInfoCards = contacts.map((contact) => (
     <GeneralInfoList
       key={contact.id}
+      id ={contact.id}
       name={contact.firstname + contact.lastname}
       email={contact.email}
       phone={contact.phone}
