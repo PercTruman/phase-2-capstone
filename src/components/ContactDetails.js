@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import  { useParams } from "react-router-dom"
 
 function ContactDetails() {
-  const [detailedCard, setDetailedCard] = useState(null);
+  const [detailedCard, setDetailedCard] = useState('hi');
   const { id } = useParams()
   
   useEffect(()=> {
@@ -11,17 +11,15 @@ function ContactDetails() {
         .then(contactObject=>setDetailedCard(contactObject))
   }, [id])
 
-  console.log(detailedCard)
-
   return (
     <div className="cardContainer">
       <div className="card">
        
-        <h4>Name: {detailedCard}</h4> 
-        {/* <h4>Email: {email}</h4> */}
-        {/* <h4>Phone: {phone}</h4>
-        <h4>Donated? {hasDonated ? "Yes" : "No"}</h4>
-        <h4>Amount of donation: {amountDonated}</h4> */}
+        <h4>Name: {detailedCard.firstname + detailedCard.lastname}</h4> 
+        <h4>Email: {detailedCard.email}</h4>
+        <h4>Phone: {detailedCard.phonenumber}</h4>
+        <h4>Donated? {detailedCard.hasDonated ? "Yes" : "No"}</h4>
+        <h4>Amount of donation: ${detailedCard.amountDonated} </h4> 
       </div>
     </div>
   );
