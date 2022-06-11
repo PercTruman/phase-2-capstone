@@ -9,6 +9,8 @@ import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
   const [contacts, setContacts] = useState([]);
+  const [search, setSearch]=useState('')
+
 
   useEffect(() => {
     fetch("http://localhost:3000/contacts")
@@ -19,6 +21,11 @@ function App() {
   function handleAddNewDonor(e, donorObj){
     e.preventDefault()
     setContacts([...contacts, donorObj])
+  }
+
+  function searchContacts(search){
+    const filteredContacts = contacts.filter(contact=>contact.name.includes(search))
+    setContacts(filteredContacts)
   }
 
   return (
@@ -32,9 +39,8 @@ function App() {
           <NewDonorForm  handleAddNewDonor={handleAddNewDonor}/>
         </Route>
         <Route exact path = "/mycontacts">
-          <FiltersAndSearch />
+          <FiltersAndSearch search={search} setSearch={setSearch} searchContacts={searchContacts}/>
           <ContactList contacts={contacts} />
-        
         </Route>
         <Route  path = "/mycontacts/:id">
           <ContactDetails />
