@@ -32,7 +32,9 @@ function App() {
           <NewDonorForm  handleAddNewDonor={handleAddNewDonor}/>
         </Route>
         <Route exact path = "/mycontacts">
+          <FiltersAndSearch />
           <ContactList contacts={contacts} />
+        
         </Route>
         <Route  path = "/mycontacts/:id">
           <ContactDetails />
@@ -41,7 +43,7 @@ function App() {
           <h1>404 not found</h1>
         </Route>
       </Switch>
-      <FiltersAndSearch />
+     
     </div>
   );
 }

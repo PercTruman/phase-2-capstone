@@ -13,11 +13,7 @@ function ContactList({ contacts }) {
   return (
     <div>
       <h2>Contacts</h2>
-      <label for="checkbox">
-        <input type="checkbox" id="checkbox" name="checkbox" />
-        Show only non-donors
-      </label>
-      {generalInfoCards}
+     {generalInfoCards}
     </div>
   );
 }
