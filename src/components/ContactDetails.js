@@ -18,6 +18,8 @@ function ContactDetails() {
         <h4>Email: {detailedCard.email}</h4>
         <h4>Phone: {detailedCard.phonenumber}</h4>
         <h4>Donated? {detailedCard.hasDonated ? "Yes" : "No"}</h4>
+        
+          
         <h4>Amount of donation: ${detailedCard.amountDonated} </h4>
         <Link to={"/mycontacts"}>Back to Contacts</Link>
       </div>

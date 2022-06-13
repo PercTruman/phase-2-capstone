@@ -4,11 +4,11 @@ html {
   letter-spacing: 1px;
 }
 
-body {
+ body {
   margin: 0 auto;
-}
+} 
 
-header,
+/* header,
 footer {
   background: rgb(2, 0, 36);
   background: radial-gradient(
@@ -30,7 +30,7 @@ footer {
   color: red;
   text-align: center;
   text-decoration: none;
-}
+} */ */
 
 a.active {
   color: yellow;
