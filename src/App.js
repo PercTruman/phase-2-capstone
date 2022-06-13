@@ -57,7 +57,7 @@ function App() {
   }
 
   function searchContacts(search){
-    const filteredContacts = contacts.filter(contact=>contact.firstname.toLowerCase().includes(search) )
+    const filteredContacts = contacts.filter(contact=>contact.firstname.toLowerCase().includes(search))
     setContacts(filteredContacts)
   }
 

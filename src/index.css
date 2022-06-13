@@ -101,8 +101,8 @@ form input {
 .smallcard {
   border: 1px solid black;
   text-align: center;
-  width: 20%;
-  margin: 1em;
+  width: 30%;
+  margin: auto;
   padding: 15px;
 }
 
@@ -110,3 +110,16 @@ button {
   margin: 1em auto;
   width: 30%;
 }
+
+/* #showOnlyDonors {
+  text-align: center;
+  width: 20%;
+  margin: auto;
+  display: block;
+  padding: 15px;
+} */
+
+/* #searchLabel{
+  display: block;
+  margin: auto;
+} */
