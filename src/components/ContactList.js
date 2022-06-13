@@ -6,7 +6,7 @@ function ContactList({ contacts }) {
     <GeneralInfoList
       key={contact.id}
       id={contact.id}
-      name={contact.firstname + contact.lastname}
+      name={contact.firstname + ' ' + contact.lastname}
       hasDonated={contact.hasDonated}
     />
   ));

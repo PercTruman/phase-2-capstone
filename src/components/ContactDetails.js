@@ -14,7 +14,7 @@ function ContactDetails() {
   return (
     <div className="cardContainer">
       <div className="bigcard">
-        <h4>Name: {detailedCard.firstname + detailedCard.lastname}</h4>
+        <h4>Name: {detailedCard.firstname + ' ' + detailedCard.lastname}</h4>
         <h4>Email: {detailedCard.email}</h4>
         <h4>Phone: {detailedCard.phonenumber}</h4>
         <h4>Donated? {detailedCard.hasDonated ? "Yes" : "No"}</h4>

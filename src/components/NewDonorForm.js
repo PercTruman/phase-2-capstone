@@ -3,12 +3,7 @@ import React from 'react'
 function NewDonorForm({handleSubmit, formData, handleChange}) {
 
 
-  
-
-
-
-  console.log(formData)
-  return (
+    return (
     <form onSubmit={handleSubmit}style={{display:"flex", flexDirection:"column", width: "400px", margin:"auto"}}>
       <label>First Name</label>
       <input value={formData.firstname} type="text" name="firstname" aria-label="first name" onChange={handleChange}></input>

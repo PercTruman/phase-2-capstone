@@ -33,8 +33,7 @@ function App() {
     // .filter((contact)=> !filterValue || contact.hasDonated === filterValue)
     
 
-  function handleAddNewDonor(e, formData){
-    e.preventDefault()
+  function handleAddNewDonor(formData){
     fetch('http://localhost:3000/contacts', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
@@ -46,7 +45,7 @@ function App() {
 
   function handleSubmit(e){
     e.preventDefault();
-    handleAddNewDonor(e,formData)
+    handleAddNewDonor(formData)
     setFormData({
       firstname: '',
       lastname: '',
