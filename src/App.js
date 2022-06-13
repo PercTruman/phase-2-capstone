@@ -10,7 +10,18 @@ import FiltersAndSearch from "./components/FiltersAndSearch";
 function App() {
   const [contacts, setContacts] = useState([]);
   const [search, setSearch]=useState('')
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    hasDonated:false,
+    amountDonated: 0.00
+  });
 
+  function handleChange(e){
+    setFormData({...formData, [e.target.name]:e.target.value})
+  }
 
   useEffect(() => {
     fetch("http://localhost:3000/contacts")
@@ -18,13 +29,36 @@ function App() {
       .then((initialContacts) => setContacts(initialContacts));
   }, []);
 
-  function handleAddNewDonor(e, donorObj){
+  // const filteredAndSortedContacts = contacts
+    // .filter((contact)=> !filterValue || contact.hasDonated === filterValue)
+    
+
+  function handleAddNewDonor(e, formData){
     e.preventDefault()
-    setContacts([...contacts, donorObj])
+    fetch('http://localhost:3000/contacts', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(formData),
+    })
+    .then(res=>res.json())
+    .then(newDonor=>setContacts([newDonor, ...contacts]))
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    handleAddNewDonor(e,formData)
+    setFormData({
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      hasDonated:false,
+      amountDonated: 0.00
+    })
   }
 
   function searchContacts(search){
-    const filteredContacts = contacts.filter(contact=>contact.name.includes(search))
+    const filteredContacts = contacts.filter(contact=>contact.firstname.toLowerCase().includes(search) )
     setContacts(filteredContacts)
   }
 
@@ -36,7 +70,7 @@ function App() {
           <Login />
         </Route>
         <Route exact path="/newdonorform">
-          <NewDonorForm  handleAddNewDonor={handleAddNewDonor}/>
+          <NewDonorForm  handleChange={handleChange} handleSubmit={handleSubmit} formData={formData}/>
         </Route>
         <Route exact path = "/mycontacts">
           <FiltersAndSearch search={search} setSearch={setSearch} searchContacts={searchContacts}/>

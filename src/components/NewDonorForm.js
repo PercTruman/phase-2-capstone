@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function NewDonorForm({handleAddNewDonor}) {
-  const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    phone: '',
-    hasDonated:false,
-    amountDonated: 0.00
-  });
+function NewDonorForm({handleSubmit, formData, handleChange}) {
 
-  function handleChange(e){
-    setFormData({...formData, [e.target.name]:e.target.value})
-  }
+
+  
+
+
+
+  console.log(formData)
   return (
-    <form onSubmit={(e)=>handleAddNewDonor(e, formData)}style={{display:"flex", flexDirection:"column", width: "400px", margin:"auto"}}>
+    <form onSubmit={handleSubmit}style={{display:"flex", flexDirection:"column", width: "400px", margin:"auto"}}>
       <label>First Name</label>
       <input value={formData.firstname} type="text" name="firstname" aria-label="first name" onChange={handleChange}></input>
       <label>Last Name</label>
