@@ -1,21 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import GeneralInfoList from "./GeneralInfoList";
+import Search from "./Search";
+import Sort from "./Sort";
 
 function ContactList({ contacts }) {
-  const generalInfoCards = contacts.map((contact) => (
-    <GeneralInfoList
-      key={contact.id}
-      id={contact.id}
-      name={contact.firstname + " " + contact.lastname}
-      hasDonated={contact.hasDonated}
-    />
-  ));
+  const [search, setSearch] = useState("");
+  const [showNonDonors, setShowNonDonors] = useState(false);
+
+  const nonDonorsList = contacts.filter(
+    (contact) => contact.hasDonated === false
+  );
+  const cards = showNonDonors ? nonDonorsList : contacts;
+
+ 
+  function handleChange(e) {
+    setSearch(e.target.value);
+    searchContacts(search);
+  }
+  function handleShowNonDonors() {
+    setShowNonDonors(!showNonDonors);
+  }
+  function searchContacts(search) {
+
+  };
+ 
+
+
+  
   return (
     <div>
+      <Sort showNonDonors={showNonDonors} handleShowNonDonors={handleShowNonDonors} />
+      <Search contacts={contacts} handleChange={handleChange} showNonDonors={showNonDonors} />
       <h2>Contacts</h2>
-      {generalInfoCards}
+      <GeneralInfoList cards={cards}/>
     </div>
   );
 }
 
-export default ContactList
+export default ContactList;

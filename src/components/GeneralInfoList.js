@@ -1,9 +1,26 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import ContactDetails from "./ContactDetails";
+import { Link } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Card } from "@mui/material";
 
-function GeneralInfoList({ id, name, hasDonated }) {
+function GeneralInfoList({cards}) {
+  const list = cards.map((card)=>
+  <div>
+      <h4>{card.name}</h4>
+      <h4>Donor? {card.hasDonated ? "Yes" : "No"}</h4>
+      <Link
+        style={{
+          display: "block",
+          paddingBottom: "15px",
+          textAlign: "center",
+        }}
+        to={`/contacts/${card.id}`}
+      >
+        Contact Details
+      </Link>
+   </div>)
+
   return (
     <div className="cardContainer">
       <Container
@@ -11,22 +28,17 @@ function GeneralInfoList({ id, name, hasDonated }) {
       >
         <Card
           variant="outlined"
-          sx={{ border:'1px solid black', textAlign: "center", marginBottom: "2rem", width: "30%" }}
+          sx={{
+            border: "1px solid black",
+            textAlign: "center",
+            marginBottom: "2rem",
+            width: "30%",
+          }}
         >
-          <h4>{name}</h4>
-          <h4>Donor? {hasDonated ? "Yes" : "No"}</h4>
-          <NavLink
-            style={{
-              display: "block",
-              paddingBottom: "15px",
-              textAlign: "center",
-            }}
-            to={`/contacts/${id}`}
-          >
-            Contact Details
-          </NavLink>
+          {list}
         </Card>
       </Container>
+      <ContactDetails />
     </div>
   );
 }

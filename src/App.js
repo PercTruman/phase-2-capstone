@@ -4,12 +4,9 @@ import ContactList from "./components/ContactList";
 import NavBar from "./components/NavBar";
 import NewDonorForm from "./components/NewDonorForm";
 import ContactDetails from "./components/ContactDetails";
-import Login from "./components/Login";
-import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
   const [contacts, setContacts] = useState([]);
-  const [search, setSearch] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -28,8 +25,7 @@ function App() {
       .then((res) => res.json())
       .then((initialContacts) => setContacts(initialContacts));
   }, []);
-
-
+  
 
   function handleAddNewDonor(formData) {
     fetch("http://localhost:3000/contacts", {
@@ -54,17 +50,10 @@ function App() {
     });
   }
 
- 
-
- 
-
   return (
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/login">
-          <Login />
-        </Route>
         <Route exact path="/newdonorform">
           <NewDonorForm
             handleChange={handleChange}
@@ -73,12 +62,6 @@ function App() {
           />
         </Route>
         <Route exact path="/contacts">
-          <FiltersAndSearch
-            search={search}
-            setSearch={setSearch}
-            contacts={contacts}
-            
-          />
           <ContactList contacts={contacts} />
         </Route>
         <Route path="/contacts/:id">
