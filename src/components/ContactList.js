@@ -6,13 +6,11 @@ import Sort from "./Sort";
 function ContactList({ contacts }) {
   const [search, setSearch] = useState("");
   const [showNonDonors, setShowNonDonors] = useState(false);
-
   const nonDonorsList = contacts.filter(
     (contact) => contact.hasDonated === false
   );
   const cards = showNonDonors ? nonDonorsList : contacts;
 
- 
   function handleChange(e) {
     setSearch(e.target.value);
     searchContacts(search);
@@ -21,12 +19,8 @@ function ContactList({ contacts }) {
     setShowNonDonors(!showNonDonors);
   }
   function searchContacts(search) {
-
   };
  
-
-
-  
   return (
     <div>
       <Sort showNonDonors={showNonDonors} handleShowNonDonors={handleShowNonDonors} />
