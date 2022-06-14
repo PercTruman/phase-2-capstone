@@ -9,18 +9,18 @@ import FiltersAndSearch from "./components/FiltersAndSearch";
 
 function App() {
   const [contacts, setContacts] = useState([]);
-  const [search, setSearch]=useState('')
+  const [search, setSearch] = useState("");
   const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    phone: '',
-    hasDonated:false,
-    amountDonated: 0.00
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    hasDonated: false,
+    amountDonated: 0.0,
   });
 
-  function handleChange(e){
-    setFormData({...formData, [e.target.name]:e.target.value})
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   useEffect(() => {
@@ -29,37 +29,34 @@ function App() {
       .then((initialContacts) => setContacts(initialContacts));
   }, []);
 
-  // const filteredAndSortedContacts = contacts
-    // .filter((contact)=> !filterValue || contact.hasDonated === filterValue)
-    
 
-  function handleAddNewDonor(formData){
-    fetch('http://localhost:3000/contacts', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
+
+  function handleAddNewDonor(formData) {
+    fetch("http://localhost:3000/contacts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     })
-    .then(res=>res.json())
-    .then(newDonor=>setContacts([newDonor, ...contacts]))
+      .then((res) => res.json())
+      .then((newDonor) => setContacts([newDonor, ...contacts]));
   }
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
-    handleAddNewDonor(formData)
+    handleAddNewDonor(formData);
     setFormData({
-      firstname: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      hasDonated:false,
-      amountDonated: 0.00
-    })
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      hasDonated: false,
+      amountDonated: 0.0,
+    });
   }
 
-  function searchContacts(search){
-    const filteredContacts = contacts.filter(contact=>contact.firstname.toLowerCase().includes(search))
-    setContacts(filteredContacts)
-  }
+ 
+
+ 
 
   return (
     <div>
@@ -69,20 +66,28 @@ function App() {
           <Login />
         </Route>
         <Route exact path="/newdonorform">
-          <NewDonorForm  handleChange={handleChange} handleSubmit={handleSubmit} formData={formData}/>
+          <NewDonorForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            formData={formData}
+          />
         </Route>
-        <Route exact path = "/mycontacts">
-          <FiltersAndSearch search={search} setSearch={setSearch} searchContacts={searchContacts}/>
+        <Route exact path="/contacts">
+          <FiltersAndSearch
+            search={search}
+            setSearch={setSearch}
+            contacts={contacts}
+            
+          />
           <ContactList contacts={contacts} />
         </Route>
-        <Route  path = "/mycontacts/:id">
+        <Route path="/contacts/:id">
           <ContactDetails />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
         </Route>
       </Switch>
-     
     </div>
   );
 }

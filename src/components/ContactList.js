@@ -6,16 +6,16 @@ function ContactList({ contacts }) {
     <GeneralInfoList
       key={contact.id}
       id={contact.id}
-      name={contact.firstname + ' ' + contact.lastname}
+      name={contact.firstname + " " + contact.lastname}
       hasDonated={contact.hasDonated}
     />
   ));
   return (
     <div>
       <h2>Contacts</h2>
-     {generalInfoCards}
+      {generalInfoCards}
     </div>
   );
 }
 
-export default ContactList;
+export default ContactList

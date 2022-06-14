@@ -8,6 +8,7 @@ html {
   margin: 0 auto;
 } 
 
+
 /* header,
 footer {
   background: rgb(2, 0, 36);
@@ -109,6 +110,11 @@ form input {
 button {
   margin: 1em auto;
   width: 30%;
+}
+
+form {
+  margin-top: 3rem;
+
 }
 
 /* #showOnlyDonors {
