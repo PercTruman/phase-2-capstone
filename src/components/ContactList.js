@@ -20,7 +20,7 @@ function ContactList({ contacts }) {
   }
 
   const filteredContacts = contacts.filter(contact =>
-        search == '' || contact.lastname === search 
+        search == '' || contact.lastname.toLowerCase().includes(search) 
   ) 
 
   return (
