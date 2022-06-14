@@ -7,7 +7,7 @@ import { Card } from "@mui/material";
 function GeneralInfoList({cards}) {
   const list = cards.map((card)=>
   <div>
-      <h4>{card.name}</h4>
+      <h4>{card.firstname} {card.lastname}</h4>
       <h4>Donor? {card.hasDonated ? "Yes" : "No"}</h4>
       <Link
         style={{
