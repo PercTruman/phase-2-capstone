@@ -4,6 +4,7 @@ import ContactList from "./components/ContactList";
 import NavBar from "./components/NavBar";
 import NewDonorForm from "./components/NewDonorForm";
 import ContactDetails from "./components/ContactDetails";
+import MissionStatement from "./components/MissionStatement";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -67,9 +68,13 @@ function App() {
         <Route path="/contacts/:id">
           <ContactDetails />
         </Route>
+        <Route path="/mission">
+          <MissionStatement />
+        </Route>
         <Route path="*">
           <h1>404 not found</h1>
         </Route>
+        
       </Switch>
     </div>
   );

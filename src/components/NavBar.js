@@ -19,6 +19,9 @@ function NavBar() {
           <NavLink to="/newdonorform" className="headerLink">
             Add New Donor
           </NavLink>
+          <NavLink to="/mission" className="headerLink">
+            Our Mission
+          </NavLink>
         </Stack>
       </Toolbar>
     </AppBar>
