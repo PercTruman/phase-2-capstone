@@ -9,6 +9,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         flexDirection: "column",
         width: "400px",
         margin: "auto",
+        paddingTop: "2rem"
       }}
     >
       <label>First Name</label>
@@ -45,7 +46,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
       ></input>
       <label>Has Donated?</label>
       <input
-        value={formData.hasDonated}
+        value={formData.hasDonated ? 'Yes':'No'}
         type="text"
         name="hasDonated"
         aria-label="Have they donated?"
