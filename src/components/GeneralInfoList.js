@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Card } from "@mui/material";
 
-function GeneralInfoList({ cards }) {
-  const list = cards.map((card) => (
+function GeneralInfoList({ filteredContacts }) {
+
+  const list = filteredContacts.map((card) => (    
     <Card
       key={card.id}
       variant="outlined"
@@ -15,7 +16,7 @@ function GeneralInfoList({ cards }) {
         width: "30%",
       }}
     >
-      <div >
+      <div>
         <h4>
           {card.firstname} {card.lastname}
         </h4>

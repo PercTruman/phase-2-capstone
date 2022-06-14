@@ -26,7 +26,6 @@ function App() {
       .then((res) => res.json())
       .then((initialContacts) => setContacts(initialContacts));
   }, []);
-  
 
   function handleAddNewDonor(formData) {
     fetch("http://localhost:3000/contacts", {
@@ -74,7 +73,6 @@ function App() {
         <Route path="*">
           <h1>404 not found</h1>
         </Route>
-        
       </Switch>
     </div>
   );

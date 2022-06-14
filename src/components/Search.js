@@ -1,13 +1,13 @@
 import React from "react";
 import { TextField } from "@mui/material";
 
-function Search({ contacts, search, handleChange }) {
+function Search({ search, handleChange }) {
 
-return (
+
+  return (
     <div>
-      Search
       <div className="smallcard">
-        <h4>Search by name:</h4>
+        <h4>Search by last name:</h4>
         <TextField
           value={search}
           id="search"

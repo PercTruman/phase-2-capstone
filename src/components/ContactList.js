@@ -11,22 +11,31 @@ function ContactList({ contacts }) {
   );
   const cards = showNonDonors ? nonDonorsList : contacts;
 
-  function handleChange(e) {
-    setSearch(e.target.value);
-    searchContacts(search);
-  }
+
   function handleShowNonDonors() {
     setShowNonDonors(!showNonDonors);
   }
-  function searchContacts(search) {
-  };
- 
+  function onHandleChange(e) {
+    setSearch(e.target.value);
+  }
+
+  const filteredContacts = contacts.filter(contact =>
+        search == '' || contact.lastname === search 
+  ) 
+
   return (
     <div>
-      <Sort showNonDonors={showNonDonors} handleShowNonDonors={handleShowNonDonors} />
-      <Search contacts={contacts} handleChange={handleChange} showNonDonors={showNonDonors} />
+      <Sort
+        showNonDonors={showNonDonors}
+        handleShowNonDonors={handleShowNonDonors}
+      />
+      <Search
+        contacts={contacts}
+        handleChange={onHandleChange}
+        showNonDonors={showNonDonors}
+      />
       <h2>Contacts</h2>
-      <GeneralInfoList cards={cards}/>
+      <GeneralInfoList filteredContacts={filteredContacts} search={search}/>
     </div>
   );
 }
