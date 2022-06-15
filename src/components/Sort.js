@@ -1,12 +1,12 @@
 import React from "react";
 
-function Sort({handleShowNonDonors }) {
+function Sort({handleShowOnlyNonDonors }) {
   return (
     <div>
       <input
         type="checkbox"
         id="showOnlyNonDonors"
-        onChange={handleShowNonDonors}
+        onChange={handleShowOnlyNonDonors}
       />
       <label htmlFor="showOnlyNonDonors">Show only non-donors </label>
     </div>

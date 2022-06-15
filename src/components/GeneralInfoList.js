@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Card } from "@mui/material";
 
-function GeneralInfoList({ filteredContacts }) {
-
+function GeneralInfoList({ filteredContacts, cards }) {
   const list = filteredContacts.map((card) => (    
     <Card
       key={card.id}

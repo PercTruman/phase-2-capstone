@@ -5,37 +5,37 @@ import Sort from "./Sort";
 
 function ContactList({ contacts }) {
   const [search, setSearch] = useState("");
-  const [showNonDonors, setShowNonDonors] = useState(false);
+  const [showOnlyNonDonors, setShowOnlyNonDonors] = useState(false);
+
   const nonDonorsList = contacts.filter(
     (contact) => contact.hasDonated === false
   );
-  const cards = showNonDonors ? nonDonorsList : contacts;
+  const cards = showOnlyNonDonors ? nonDonorsList : contacts;
 
 
-  function handleShowNonDonors() {
-    setShowNonDonors(!showNonDonors);
+  function handleShowOnlyNonDonors() {
+     setShowOnlyNonDonors(!showOnlyNonDonors);
   }
   function onHandleChange(e) {
     setSearch(e.target.value);
   }
-
-  const filteredContacts = contacts.filter(contact =>
-        search == '' || contact.lastname.toLowerCase().includes(search) 
-  ) 
+ 
+  const filteredContacts = cards.filter(card =>
+        search === '' || card.lastname.toLowerCase().includes(search.toLowerCase())
+  )
 
   return (
     <div>
       <Sort
-        showNonDonors={showNonDonors}
-        handleShowNonDonors={handleShowNonDonors}
+        handleShowOnlyNonDonors={handleShowOnlyNonDonors}
       />
       <Search
         contacts={contacts}
         handleChange={onHandleChange}
-        showNonDonors={showNonDonors}
+        showOnlyNonDonors={showOnlyNonDonors}
       />
       <h2>Contacts</h2>
-      <GeneralInfoList filteredContacts={filteredContacts} search={search}/>
+      <GeneralInfoList filteredContacts={filteredContacts} cards={cards}/>
     </div>
   );
 }
