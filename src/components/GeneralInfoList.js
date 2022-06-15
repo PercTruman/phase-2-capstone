@@ -9,6 +9,7 @@ function GeneralInfoList({ filteredContacts, cards }) {
       key={card.id}
       variant="outlined"
       sx={{
+        boxShadow: "5px 5px 5px black",
         border: "1px solid black",
         textAlign: "center",
         marginBottom: "2rem",
@@ -36,6 +37,7 @@ function GeneralInfoList({ filteredContacts, cards }) {
 
   return (
     <div className="cardContainer">
+
       <Container
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
