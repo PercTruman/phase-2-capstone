@@ -7,6 +7,7 @@ function Search({ search, handleChange }) {
       <div className="smallcard">
         <h4>Search by last name:</h4>
         <TextField
+          size="small"
           value={search}
           id="search"
           variant="outlined"

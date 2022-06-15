@@ -1,41 +1,12 @@
 html {
   margin: 0;
-  font-family: "Oswald", sans-serif;
   letter-spacing: 1px;
 }
 
  body {
   margin: 0 auto;
+  font-family: "Oswald", sans-serif;
 } 
-
-
-/* header,
-footer {
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 38, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  color: white;
-  text-align: center;
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-}
-
-.headerLink {
-  margin: 1rem;
-  padding: 0.5em;
-  color: red;
-  text-align: center;
-  text-decoration: none;
-} */ */
-
-a.active {
-  color: yellow;
-}
 
 h4 {
   text-align: center;
@@ -121,3 +92,4 @@ form {
   text-align: center;
   margin-top: 2rem;
 }
+ 

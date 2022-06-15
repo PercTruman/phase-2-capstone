@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
 
 function NavBar() {
   return (
-    <AppBar position="static" height="6rem">
+    <AppBar position="static" sx={{height:"6rem"}}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Easy Money: Finally, A Fundraiser That Works As Hard As You Do
