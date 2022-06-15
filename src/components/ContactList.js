@@ -12,30 +12,29 @@ function ContactList({ contacts }) {
   );
   const cards = showOnlyNonDonors ? nonDonorsList : contacts;
 
-
   function handleShowOnlyNonDonors() {
-     setShowOnlyNonDonors(!showOnlyNonDonors);
+    setShowOnlyNonDonors(!showOnlyNonDonors);
   }
   function onHandleChange(e) {
     setSearch(e.target.value);
   }
- 
-  const filteredContacts = cards.filter(card =>
-        search === '' || card.lastname.toLowerCase().includes(search.toLowerCase())
-  )
+
+  const filteredContacts = cards.filter(
+    (card) =>
+      search === "" ||
+      card.lastname.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div>
-      <Sort
-        handleShowOnlyNonDonors={handleShowOnlyNonDonors}
-      />
-      <Search
+       <Search
         contacts={contacts}
         handleChange={onHandleChange}
         showOnlyNonDonors={showOnlyNonDonors}
       />
+      <Sort handleShowOnlyNonDonors={handleShowOnlyNonDonors} />
       <h2>Contacts</h2>
-      <GeneralInfoList filteredContacts={filteredContacts} cards={cards}/>
+      <GeneralInfoList filteredContacts={filteredContacts} cards={cards} />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
-function Sort({handleShowOnlyNonDonors }) {
+function Sort({ handleShowOnlyNonDonors }) {
   return (
-    <div>
+    <div className="checkbox">
       <input
         type="checkbox"
         id="showOnlyNonDonors"

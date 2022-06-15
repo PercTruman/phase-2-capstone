@@ -4,7 +4,7 @@ import { Container } from "@mui/system";
 import { Card } from "@mui/material";
 
 function GeneralInfoList({ filteredContacts, cards }) {
-  const list = filteredContacts.map((card) => (    
+  const list = filteredContacts.map((card) => (
     <Card
       key={card.id}
       variant="outlined"

@@ -103,7 +103,7 @@ form input {
   border: 1px solid black;
   text-align: center;
   width: 30%;
-  margin: auto;
+  margin: 1rem auto;
   padding: 15px;
 }
 
@@ -116,3 +116,8 @@ form {
   margin-top: 3rem;
 }
 
+.checkbox {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}

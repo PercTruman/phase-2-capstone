@@ -2,8 +2,6 @@ import React from "react";
 import { TextField } from "@mui/material";
 
 function Search({ search, handleChange }) {
-
-
   return (
     <div>
       <div className="smallcard">
