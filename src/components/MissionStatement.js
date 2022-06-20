@@ -4,7 +4,6 @@ function MissionStatement() {
   return (
     <div>
       <h3>
-        {" "}
         Band family, friends, and fans - Thank you for taking the time to view
         our fundraiser page. As we begin another exciting marching season, one
         of the most important things that we do is raise money for our program.

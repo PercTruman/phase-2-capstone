@@ -8,7 +8,7 @@ function GeneralInfoList({ filteredContacts }) {
     <Grid item xs={4}>
       <Paper
         elevation={18}
-        style={{ margin: "0px 0px 8px 0px", border: "1px solid black" }}
+        style={{ margin: "0px 0px 8px 0px", border: "1px solid black", minWidth: "300px" }}
         key={card.id}
       >
         <div>

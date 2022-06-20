@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
+import trainImage from "../images/trainSmall.png"
 
 function NavBar() {
   const titleStyle={
@@ -17,7 +18,7 @@ function NavBar() {
   return (
     <AppBar position="static" sx={{height:"8rem"}}>
       <Toolbar>
-        <img src = ".../public/train.jpg" alt="train logo"/>
+        <img src = {trainImage} alt="train logo" className="image"/>
         <Typography style={titleStyle} variant="h5" component="div" sx={{ flexGrow: 1 }}>
           Gravy Train: Finally, A Fundraiser That Works As Hard As You Do
         </Typography>
