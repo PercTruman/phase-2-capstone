@@ -1,20 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "@mui/system";
-import { Card } from "@mui/material";
+import { Grid }from "@mui/material";
+import { Paper } from "@mui/material"
 
-function GeneralInfoList({ filteredContacts, cards }) {
+function GeneralInfoList({ filteredContacts }) {
+  
   const list = filteredContacts.map((card) => (
-    <Card
+    <Grid item xs={4}>
+    <Paper 
       key={card.id}
-      variant="outlined"
-      sx={{
-        boxShadow: "5px 5px 5px black",
-        border: "1px solid black",
-        textAlign: "center",
-        marginBottom: "2rem",
-        width: "30%",
-      }}
     >
       <div>
         <h4>
@@ -32,17 +26,19 @@ function GeneralInfoList({ filteredContacts, cards }) {
           Contact Details
         </Link>
       </div>
-    </Card>
+    </Paper>
+    </Grid>
+    
   ));
 
   return (
     <div className="cardContainer">
-
-      <Container
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-      >
-        {list}
-      </Container>
+      <Grid container spacing = {3}>
+        
+          
+          {list}
+  
+      </Grid>
     </div>
   );
 }

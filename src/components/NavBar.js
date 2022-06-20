@@ -4,8 +4,8 @@ import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
 
 function NavBar() {
   const titleStyle={
-    border: "1px solid yellow",
     width: "100%",
+    margin: "0 auto",
     fontSize: "32px",
     display: "block"
   }
@@ -16,8 +16,9 @@ function NavBar() {
   return (
     <AppBar position="static" sx={{height:"6rem"}}>
       <Toolbar>
-        <Typography style={titleStyle}variant="h5" component="div" sx={{ flexGrow: 1 }}>
-          Easy Money: Finally, A Fundraiser That Works As Hard As You Do
+        <img src = ".../public/train.jpg" alt="train logo"/>
+        <Typography style={titleStyle} variant="h5" component="div" sx={{ flexGrow: 1 }}>
+          Gravy Train: Finally, A Fundraiser That Works As Hard As You Do
         </Typography>
         <Stack direction="row" spacing={2}>
           <NavLink to="/login" style={linkStyle} className="headerLink">

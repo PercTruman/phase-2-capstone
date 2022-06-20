@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GeneralInfoList from "./GeneralInfoList";
 import Search from "./Search";
 import Sort from "./Sort";
+import { Grid }from "@mui/material";
 
 function ContactList({ contacts }) {
   const [search, setSearch] = useState("");
@@ -34,7 +35,9 @@ function ContactList({ contacts }) {
       />
       <Sort handleShowOnlyNonDonors={handleShowOnlyNonDonors} />
       <h2>Contacts</h2>
-      <GeneralInfoList filteredContacts={filteredContacts} cards={cards} />
+      <Grid container spacing={2} justify="space-around" padding={8}>
+        <GeneralInfoList filteredContacts={filteredContacts} cards={cards} />
+      </Grid>
     </div>
   );
 }

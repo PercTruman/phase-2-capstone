@@ -1,6 +1,6 @@
 
 
-Easy Money Fundraiser: Student Interface
+Gravy Train Fundraiser: Student Interface
 
 This app is designed for a student involved in a fundraising project.  Prior to using this app, the student has acquired a list of contacts who have promised to make a donation to the student's cause.
 

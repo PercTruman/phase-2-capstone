@@ -12,7 +12,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         paddingTop: "2rem"
       }}
     >
-      <label>First Name</label>
+      <label className="formLabel">First Name</label>
       <input
         value={formData.firstname}
         type="text"
@@ -20,7 +20,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         aria-label="first name"
         onChange={handleChange}
       ></input>
-      <label>Last Name</label>
+      <label className="formLabel">Last Name</label>
       <input
         value={formData.lastname}
         type="text"
@@ -28,7 +28,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         aria-label="last name"
         onChange={handleChange}
       ></input>
-      <label>Email</label>
+      <label className="formLabel">Email</label>
       <input
         value={formData.email}
         type="text"
@@ -36,7 +36,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         aria-label="email"
         onChange={handleChange}
       ></input>
-      <label>Phone</label>
+      <label className="formLabel">Phone</label>
       <input
         value={formData.phone}
         type="text"
@@ -44,7 +44,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         aria-label="phone"
         onChange={handleChange}
       ></input>
-      <label>Has Donated?</label>
+      <label className="formLabel">Has Donated?</label>
       <input
         value={formData.hasDonated ? 'Yes':'No'}
         type="text"
@@ -52,7 +52,7 @@ function NewDonorForm({ handleSubmit, formData, handleChange }) {
         aria-label="Have they donated?"
         onChange={handleChange}
       ></input>
-      <label>Amount Donated</label>
+      <label className="formLabel">Amount Donated</label>
       <input
         value={formData.amountDonated}
         type="number"
