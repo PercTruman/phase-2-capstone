@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
 
 function NavBar() {
   const titleStyle={
+    fontFamily: "Oswald",
     width: "40%",
     fontSize: "32px",
     display: "block",

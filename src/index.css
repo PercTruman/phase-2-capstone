@@ -1,12 +1,14 @@
 html {
   margin: 0;
   letter-spacing: 1.5px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
  body {
   margin: 0 auto;
   background-color: rgb(185, 168, 212);
+  font-family: "Oswald", sans-serif;
+
 } 
 
 h4 {
